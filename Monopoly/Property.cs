@@ -96,7 +96,7 @@ namespace Monopoly
 
         public string writeOwner()
         {
-            return _owner.Name;
+            return String.Format("  {0}  ", _owner.Number);
         }
     }
 }

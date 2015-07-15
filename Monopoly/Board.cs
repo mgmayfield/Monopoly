@@ -74,12 +74,12 @@ namespace Monopoly
                                                                  "Line ", " inia", "  ?  ", " Ave ", "Place", " ric ", " Tax ", "Charl", " walk", "     ",
                                                                  "ticut", "mont ", "  ?  ", " ntal", "Rail ", " Tax ", " tic ", "Chest", "teran", "     " };
         
-        public static void viewBoard(List<Player> players)
-        {            
-            //foreach (Int16 i in viewBoardOrder)
-            //{
-                
-            //}
+        public void viewBoard(List<Player> players)
+        {
+            foreach (Int16 i in viewBoardOrder)
+            {
+                Property p = _playingBoard[i];
+            }
 
             Console.WriteLine(" ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ");
             Console.WriteLine("|     |     |Chanc|Indi-|     |     |     |     |     |     |     |");
