@@ -94,6 +94,9 @@ namespace Monopoly
             }
         }
 
-        public string writeOwner 
+        public string writeOwner()
+        {
+            return _owner.Name;
+        }
     }
 }

@@ -59,27 +59,27 @@ namespace Monopoly
         private const string midLines = " -----                                                 ----- ";
 
 
-        private const Int16[] viewBoardOrder = new Int16[40] { 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 
+        private Int16[] viewBoardOrder = new Int16[40] { 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 
                                                           30, 19, 31, 18, 32, 17, 33, 16, 34, 15,
                                                           35, 14, 36, 13, 37, 12, 38, 11, 19, 10,
                                                           9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
 
-        private const string[] viewTopName = new string[40] { "Free ", "Kent-", "Chanc", "Indi-", "Illi-", " B&O ", "Atla-", "Vent-", "Water", "Marvn",
+        private string[] viewTopName = new string[40] { "Free ", "Kent-", "Chanc", "Indi-", "Illi-", " B&O ", "Atla-", "Vent-", "Water", "Marvn",
                                                               "Go To", " New ", "Paci-", "Tenn-", "North", "Comm ", "Comm ", " St. ", "Penn ", "Penn ",
                                                               "Short", "Virg-", "Chanc", "State", "Park ", "Elect", " Lux ", " St. ", "Board", "Jail ",
                                                               "Conn-", "Ver- ", "Chanc", "Orie-", "Read ", "Incom", "Bal- ", "Comm ", "Medi-", " GO  " };
 
-        private const string[] viewBottomName = new string[40] { " Park", " ucky", "  ?  ", " ana ", " nois", "Rail ", " ntic", " nor ", "Works", "Gardn",
+        private string[] viewBottomName = new string[40] { " Park", " ucky", "  ?  ", " ana ", " nois", "Rail ", " ntic", " nor ", "Works", "Gardn",
                                                                  " Jail", " York", " fic ", "essee", "Carol", "Chest", "Chest", "James", " Ave ", "Rail ", 
                                                                  "Line ", " inia", "  ?  ", " Ave ", "Place", " ric ", " Tax ", "Charl", " walk", "     ",
                                                                  "ticut", "mont ", "  ?  ", " ntal", "Rail ", " Tax ", " tic ", "Chest", "teran", "     " };
         
         public static void viewBoard(List<Player> players)
         {            
-            foreach (Int16 i in viewBoardOrder)
-            {
+            //foreach (Int16 i in viewBoardOrder)
+            //{
                 
-            }
+            //}
 
             Console.WriteLine(" ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ");
             Console.WriteLine("|     |     |Chanc|Indi-|     |     |     |     |     |     |     |");
