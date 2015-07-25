@@ -81,6 +81,7 @@ namespace Monopoly
         }
 
 
+        // Outputs how many houses are currently on the property
         public string writeHouses()
         {
             switch (_houses)

@@ -30,6 +30,7 @@ namespace Monopoly
             set { _token = value; }
         }
         
+        // Current location on the board
         private int _space;
         public int Space
         {

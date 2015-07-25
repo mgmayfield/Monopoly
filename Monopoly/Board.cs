@@ -59,33 +59,36 @@ namespace Monopoly
         private const string midLines = " -----                                                 ----- ";
 
 
-        private Int16[] viewBoardOrder = new Int16[40] { 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 
+        private static Int16[] viewBoardOrder = new Int16[40] { 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 
                                                           30, 19, 31, 18, 32, 17, 33, 16, 34, 15,
                                                           35, 14, 36, 13, 37, 12, 38, 11, 19, 10,
                                                           9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
 
-        private string[] viewTopName = new string[40] { "Free ", "Kent-", "Chanc", "Indi-", "Illi-", " B&O ", "Atla-", "Vent-", "Water", "Marvn",
+        private static string[] viewTopName = new string[40] { "Free ", "Kent-", "Chanc", "Indi-", "Illi-", " B&O ", "Atla-", "Vent-", "Water", "Marvn",
                                                               "Go To", " New ", "Paci-", "Tenn-", "North", "Comm ", "Comm ", " St. ", "Penn ", "Penn ",
                                                               "Short", "Virg-", "Chanc", "State", "Park ", "Elect", " Lux ", " St. ", "Board", "Jail ",
                                                               "Conn-", "Ver- ", "Chanc", "Orie-", "Read ", "Incom", "Bal- ", "Comm ", "Medi-", " GO  " };
 
-        private string[] viewBottomName = new string[40] { " Park", " ucky", "  ?  ", " ana ", " nois", "Rail ", " ntic", " nor ", "Works", "Gardn",
+        private static string[] viewBottomName = new string[40] { " Park", " ucky", "  ?  ", " ana ", " nois", "Rail ", " ntic", " nor ", "Works", "Gardn",
                                                                  " Jail", " York", " fic ", "essee", "Carol", "Chest", "Chest", "James", " Ave ", "Rail ", 
                                                                  "Line ", " inia", "  ?  ", " Ave ", "Place", " ric ", " Tax ", "Charl", " walk", "     ",
                                                                  "ticut", "mont ", "  ?  ", " ntal", "Rail ", " Tax ", " tic ", "Chest", "teran", "     " };
         
-        public static void viewBoard(List<Player> players)
+        public static void viewBoard(List<Player> players, Board board)
         {            
-            //foreach (Int16 i in viewBoardOrder)
-            //{
-                
-            //}
+            foreach (Int16 i in viewBoardOrder)
+            {
+                if (i/10 == 2)
+                {
+
+                }
+            }
 
             Console.WriteLine(" ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ");
-            Console.WriteLine("|     |     |Chanc|Indi-|     |     |     |     |     |     |     |");
-            Console.WriteLine("|     |     |  ?  | ana |     |     |     |     |     |     |     |");
-            Console.WriteLine("|     |     |     | *** |     |     |     |     |     |     |     |");
-            Console.WriteLine("|     |     | 1 2 |   2 |     |     |     |     |     |     |     |");
+            Console.WriteLine(String.Format("|{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|"), viewTopName[0], viewTopName[1], viewTopName[2], viewTopName[3], viewTopName[4], viewTopName[5], viewTopName[6], viewTopName[7], viewTopName[8], viewTopName[9], viewTopName[10]);
+            Console.WriteLine(String.Format("|{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|"), viewBottomName[0], viewBottomName[1], viewBottomName[2], viewBottomName[3], viewBottomName[4], viewBottomName[5], viewBottomName[6], viewBottomName[7], viewBottomName[8], viewBottomName[9], viewBottomName[10]);
+            Console.WriteLine(String.Format("|{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|"), board.PlayingBoard[viewBoardOrder[0]].writeHouses(), board.PlayingBoard[viewBoardOrder[1]].writeHouses(), board.PlayingBoard[viewBoardOrder[2]].writeHouses(), board.PlayingBoard[viewBoardOrder[3]].writeHouses(), board.PlayingBoard[viewBoardOrder[4]].writeHouses(), board.PlayingBoard[viewBoardOrder[5]].writeHouses(), board.PlayingBoard[viewBoardOrder[6]].writeHouses(), board.PlayingBoard[viewBoardOrder[7]].writeHouses(), board.PlayingBoard[viewBoardOrder[8]].writeHouses(), board.PlayingBoard[viewBoardOrder[9]].writeHouses(), board.PlayingBoard[viewBoardOrder[10]].writeHouses());
+            Console.WriteLine(String.Format("| {0} {1} |     | 1 2 |   2 |     |     |     |     |     |     |     |"), players[0].location(viewBoardOrder[0]));
             Console.WriteLine("|     |     | 3 4 |     |     |     |     |     |     |     |     |");
             Console.WriteLine("|     |     |  2  |  1  |     |     |     |     |     |     |     |");
             Console.WriteLine(" ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ");
