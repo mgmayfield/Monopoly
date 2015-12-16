@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
+using static System.Console;
 
 namespace Monopoly
 {
@@ -13,29 +10,25 @@ namespace Monopoly
         {
             Board playingBoard = new Board();
             List<Player> players = newPlayers();
-            Int16 numberOfPlayers;
+            short numberOfPlayers;
 
-            Console.WriteLine("Welcome to Monopoly!");
-            Console.Write("How many will be playing (2-4): ");
-            Int16.TryParse(Console.ReadLine(), out numberOfPlayers);
+            WriteLine("Welcome to Monopoly!");
+            Write("How many will be playing (2-4): ");
+            short.TryParse(ReadLine(), out numberOfPlayers);
             
             players.RemoveRange(numberOfPlayers, 4 - numberOfPlayers);
 
             foreach (Player p in players)
             {
-                Console.Write("{0}, what's your name: ", p.Name);
-                p.Name = Console.ReadLine();
-
-                Console.WriteLine("These tokens are available: {0}", availableTokens(players));
-                Console.Write("{0}, which would you like: ", p.Name);
-                p.Token = (Tokens)Enum.Parse(typeof(Tokens), Console.ReadLine());
+                p.readName();
+                p.readToken(players);
             }
 
-            Console.WriteLine("Let's get started!");
+            WriteLine("Let's get started!");
             viewBoard();
 
-            Console.Write("Bob, what's your name: ");
-            string a = Console.ReadLine();
+            Write("Bob, what's your name: ");
+            string a = ReadLine();
 
         }
 

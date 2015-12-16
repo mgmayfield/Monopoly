@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using static System.Console;
 
 namespace Monopoly
 {
@@ -6,53 +8,50 @@ namespace Monopoly
     
     public class Player
     {
-        private string _name;
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
+        public string Name { get; private set; }
+        public short Number { get; private set; }
+        public Tokens Token { get; private set; } = Tokens.None;
+        public int Space { get; } = 0;                  // Current location on the board
+        public int Cash { get; } = 1500;
 
-        private Int16 _number;
-        public Int16 Number
+        public Player(string name, short number)
         {
-            get { return _number; }
-        }
-
-        private Tokens _token;
-        public Tokens Token
-        {
-            get { return _token; }
-            set { _token = value; }
-        }
-        
-        // Current location on the board
-        private int _space;
-        public int Space
-        {
-            get { return _space; }
-            set { _space = value; }
-        }
-
-        private int _cash;
-        public int Cash
-        {
-            get { return _cash; }
-            set { _cash = value; }
-        }
-
-        public Player(string name, Int16 number)
-        {
-            _name = name;
-            _number = number;
-            _token = Tokens.None;
-            _space = 0;
-            _cash = 1500;
+            Name = name;
+            Number = number;
         }
 
         public string location (int boardSpace)
         {
-            return boardSpace == _space ? String.Format("{0}", _number) : " ";
+            return boardSpace == Space ? String.Format("{0}", Number) : " ";
+        }
+
+        public void readName()
+        {
+            Write("{0}, what's your name: ", Name);
+            Name = ReadLine();
+        }
+
+        public void readToken(List<Player> players)
+        {
+            WriteLine("These tokens are available: {0}", availableTokens(players));
+            Write("{0}, which would you like: ", Name);
+            Token = (Tokens)Enum.Parse(typeof(Tokens), ReadLine());
+        }
+
+        private static string availableTokens(List<Player> players)
+        {
+            string tokensLeft = "";
+            Int16[] available = new Int16[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            foreach (Player p in players)
+                available[(int)p.Token] = 0;
+
+            for (int i = 1; i <= 10; i++)
+                if (available[i] > 0)
+                    tokensLeft += String.Format("{0}, ", (Tokens)i);
+
+            tokensLeft = tokensLeft.Remove(tokensLeft.Length - 2);
+            return tokensLeft;
         }
     }
 }
