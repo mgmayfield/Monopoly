@@ -51,22 +51,6 @@ namespace Monopoly
             return players;
         }
 
-        private static string availableTokens(List<Player> players)
-        {
-            string tokensLeft = "";
-            Int16[] available = new Int16[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            
-            foreach (Player p in players)
-                available[(int)p.Token] = 0;
-
-            for (int i = 1; i <= 10; i++)
-                if (available[i] > 0)
-                    tokensLeft += String.Format("{0}, ", (Tokens)i);
-
-            tokensLeft = tokensLeft.Remove(tokensLeft.Length - 2);
-            return tokensLeft;
-        }
-
         private static void viewBoard()
         {
             Console.WriteLine(" ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ");
