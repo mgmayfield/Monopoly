@@ -4,7 +4,7 @@ namespace Monopoly
 {
     public class Property
     {
-        private Int16 _space;
+        private Int16 _space; // Things
         public Int16 Space
         {
             get { return _space; }
